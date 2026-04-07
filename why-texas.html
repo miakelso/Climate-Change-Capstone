@@ -1,43 +1,540 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Why Focus on Texas?</title>
-    <link rel="stylesheet" href="styles.css" />
-    <style>
-      main {
-        min-height: 100vh;
-        display: grid;
-        place-items: center;
-        text-align: center;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why Texas? | Climate Change in Texas</title>
+  <style>
+    :root {
+      --bg: #f6f7f4;
+      --surface: #ffffff;
+      --text: #1f2933;
+      --muted: #52606d;
+      --accent: #1f5f8b;
+      --accent-dark: #154360;
+      --border: #d9e2ec;
+      --quote-bg: #eef5fb;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --max-width: 1000px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      border-radius: 14px;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(8, 20, 32, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      min-height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .nav-brand {
+      margin: 0;
+      color: #eaf6ff;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.35rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      color: #f1f9ff;
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      padding: 0.38rem 0.64rem;
+      border-radius: 999px;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .site-header {
+      position: relative;
+      background: linear-gradient(rgba(14, 35, 51, 0.7), rgba(14, 35, 51, 0.7)),
+        url("images/Great_Stays_of_Texas_Texas_lodging_Texas_bluebonnets.png") center/cover;
+      color: white;
+      padding: 5rem 1.5rem 4rem;
+    }
+
+    .header-inner,
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.9;
+      margin-bottom: 0.75rem;
+    }
+
+    h1 {
+      font-size: clamp(2.3rem, 5vw, 4rem);
+      line-height: 1.1;
+      margin: 0 0 1rem;
+    }
+
+    .subtitle {
+      font-size: 1.15rem;
+      max-width: 780px;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.95);
+    }
+
+    .header-credit {
+      position: absolute;
+      left: 1.5rem;
+      bottom: 0.75rem;
+      margin: 0;
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, 0.9);
+      font-family: inherit;
+    }
+
+    .header-credit a {
+      color: inherit;
+    }
+
+    main {
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    .intro-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      padding: 1.75rem;
+      margin-top: -2rem;
+      position: relative;
+    }
+
+    .page-nav {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin: 1rem 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .page-nav a {
+      text-decoration: none;
+      background: #f0f4f8;
+      border: 1px solid var(--border);
+      padding: 0.55rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.95rem;
+    }
+
+    section {
+      margin-top: 2.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      padding: 2rem;
+    }
+
+    h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      line-height: 1.2;
+      margin-top: 0;
+      margin-bottom: 1rem;
+      color: var(--accent-dark);
+    }
+
+    p {
+      margin: 0 0 1rem;
+      font-size: 1.06rem;
+    }
+
+    .quote {
+      background: var(--quote-bg);
+      border-left: 5px solid var(--accent);
+      padding: 1rem 1.1rem;
+      margin: 1.25rem 0;
+      border-radius: 10px;
+      font-size: 1.02rem;
+    }
+
+    .quote strong {
+      display: block;
+      margin-bottom: 0.35rem;
+      color: var(--accent-dark);
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+    }
+
+    .visual {
+      margin: 1.5rem 0;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      background: #fafbfc;
+    }
+
+    .visual-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    figure {
+      margin: 0;
+      padding: 1rem;
+    }
+
+    figcaption {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-top: 0.75rem;
+    }
+
+    .transition {
+      background: linear-gradient(135deg, #12344d, #1f5f8b);
+      color: white;
+      text-align: center;
+    }
+
+    .transition h2,
+    .transition p {
+      color: white;
+    }
+
+    .button-link {
+      display: inline-block;
+      margin-top: 0.5rem;
+      background: white;
+      color: var(--accent-dark);
+      text-decoration: none;
+      padding: 0.85rem 1.2rem;
+      border-radius: 999px;
+      font-weight: bold;
+    }
+
+    .source-note {
+      font-size: 0.95rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    footer {
+      max-width: var(--max-width);
+      margin: 2rem auto 0;
+      padding: 0 1.5rem 3rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .project-footer {
+      background: linear-gradient(135deg, #0f1b27, #17344a);
+      color: #dbe9f6;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 1.8rem 0 2.2rem;
+      margin-top: 2rem;
+    }
+
+    .project-footer .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .project-footer a {
+      color: #9fd9ff;
+    }
+
+    .footer-title {
+      margin: 0;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .footer-meta {
+      margin: 0.4rem 0 0;
+      color: #c5d7e8;
+      font-size: 0.94rem;
+      max-width: 820px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+      margin: 0.85rem 0 0.2rem;
+      padding: 0;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      padding: 0.36rem 0.72rem;
+      font-size: 0.88rem;
+      color: #9fd9ff;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .footer-links a:hover,
+    .footer-links a:focus-visible {
+      background: rgba(255, 255, 255, 0.18);
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 760px) {
+      .nav-inner {
+        min-height: 52px;
+        align-items: flex-start;
+        padding-top: 0.45rem;
+        padding-bottom: 0.45rem;
       }
 
-      .panel {
-        background: #fff;
-        padding: 2rem;
-        border-radius: 14px;
-        box-shadow: 0 10px 24px rgba(16, 32, 48, 0.08);
-        width: min(760px, 92%);
+      .nav-brand {
+        font-size: 0.84rem;
       }
 
-      .panel a {
-        color: #0b7285;
-        font-weight: 700;
-        text-decoration: none;
+      .nav-links {
+        gap: 0.2rem;
+        justify-content: flex-end;
       }
-    </style>
-  </head>
-  <body>
-    <main>
-      <section class="panel" aria-label="Next page placeholder">
-        <h1>Why Focus on Texas?</h1>
-        <p>
-          This page is ready for your next section content and deeper regional
-          analysis.
-        </p>
-        <p><a href="index.html">← Back to Home</a></p>
-      </section>
-    </main>
-  </body>
+
+      .nav-links a {
+        font-size: 0.84rem;
+        padding: 0.33rem 0.5rem;
+      }
+
+      .project-footer {
+        padding: 1.25rem 0 1.55rem;
+      }
+
+      .footer-title {
+        font-size: 0.95rem;
+      }
+
+      .footer-meta {
+        font-size: 0.88rem;
+      }
+
+      .footer-links a {
+        font-size: 0.83rem;
+      }
+
+      .visual-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section,
+      .intro-card {
+        padding: 1.35rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="top-nav" aria-label="Primary">
+    <div class="nav-inner">
+      <p class="nav-brand">Climate Change in Texas</p>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="why-texas.html">Why Texas</a></li>
+        <li><a href="rising-temperatures.html">Rising Temperatures in Texas</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="eyebrow">Climate Change in Texas</div>
+      <h1>Why Texas?</h1>
+      <p class="subtitle">
+        Why regional climate matters, and why Texas is one of the most important places to study the present and future effects of climate change.
+      </p>
+      <p class="header-credit">
+        Source: <a href="https://greatstaysoftexas.com/blog/discover-the-magic-of-texas-bluebonnets/" target="_blank" rel="noopener noreferrer">Great Stays of Texas, “Discover the Magic of Texas Bluebonnets”</a>
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <div class="intro-card">
+      <p>
+        Climate change is a global issue, but its impacts are not evenly distributed. Different regions experience climate change in distinct ways depending on geography, atmospheric patterns, and environmental conditions. Texas provides a particularly important case study because of its size, geographic diversity, and exposure to extreme weather.
+      </p>
+      <ul class="page-nav">
+        <li><a href="#focus">Why Focus on Texas?</a></li>
+        <li><a href="#patterns">Regional Climate Patterns</a></li>
+        <li><a href="#change">A Region Already Experiencing Change</a></li>
+        <li><a href="#vulnerable">Why Texas Is Especially Vulnerable</a></li>
+      </ul>
+    </div>
+
+    <section id="focus">
+      <h2>Why Focus on Texas?</h2>
+      <p>
+        Texas is part of the Southern Great Plains, a region with major climate contrasts and frequent weather extremes. In <em>Regional Climate Trends and Scenarios for the U.S. National Climate Assessment: Part 4. Climate of the U.S. Great Plains</em>, Kunkel et al. describe the area as having “a highly diverse climate with large spatial variations,” including both “some of the coldest and hottest regions of the coterminous U.S. as well as some of the wetter and drier regions.”
+      </p>
+      <p>
+        The report explains that the Gulf of Mexico is the main source of moisture for the region, while the lack of mountain barriers to the north leaves the area exposed to Arctic air outbreaks. This combination helps create the dramatic swings in temperature and precipitation that make Texas especially important in a project about climate change and weather extremes.
+      </p>
+      <p class="source-note">
+        Source: Kunkel et al., 2013, pp. 11–12.
+      </p>
+    </section>
+
+    <section id="patterns">
+      <h2>Regional Climate Patterns in the Great Plains</h2>
+      <p>
+        Kunkel et al. show that the Great Plains include an enormous climate range. The report notes that “average annual temperatures in south Texas are greater than 70°F,” while colder northern and mountain areas are far cooler. It also explains that “average annual precipitation also exhibits an extremely large range,” from less than 10 inches in some western areas to more than 60 inches in the far southeast.
+      </p>
+
+      <div class="visual">
+        <div class="visual-grid">
+          <figure>
+            <img src="images/Annual Temperature.jpeg" alt="Great Plains average annual temperature map from Kunkel et al. report" />
+            <figcaption>
+              Figure 2 from Kunkel et al. showing average annual temperature patterns across the Great Plains region.
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="images/Annual Precipatation.jpeg" alt="Great Plains average annual precipitation map from Kunkel et al. report" />
+            <figcaption>
+              Figure 3 from Kunkel et al. showing average annual precipitation patterns across the Great Plains region.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="quote">
+        <strong>Kunkel et al. (2013)</strong>
+        “Precipitation tends to be erratic, and severe droughts occur from time to time.”
+      </div>
+      <p>
+        This matters for Texas because it means the state already experiences strong climate variability. When climate change shifts temperatures and rainfall patterns further, those changes can intensify problems that already exist, including drought, flooding, and severe storms.
+      </p>
+      <p class="source-note">
+        Source: Kunkel et al., 2013, pp. 11–13.
+      </p>
+    </section>
+
+    <section id="change">
+      <h2>A Region Already Experiencing Climate Change</h2>
+      <p>
+        The Fifth National Climate Assessment makes it clear that climate change is not only a future concern, but an ever present one. The assessment states that “the effects of human-caused climate change are already far-reaching and worsening across every region of the United States.” That statement is important for a Texas-focused project because it places Texas within a national pattern of measurable climate change.
+      </p>
+    
+      <p>
+        The same assessment explains that “changes in multiple aspects of climate are apparent in every US region,” including warming, changing precipitation, and heavier rainfall events. That broad conclusion helps support the regional evidence shown in Texas and the Southern Great Plains.
+      </p>
+
+      <div class="visual">
+        <figure>
+          <img src="images/figure1.5 in FNCA.jpg" alt="US annual average temperature change graph from the Fifth National Climate Assessment" />
+          <figcaption>
+            Figure 1.5 from the Fifth National Climate Assessment showing that the United States has warmed rapidly since the 1970s.
+          </figcaption>
+        </figure>
+      </div>
+      <p class="source-note">
+        Source: Fifth National Climate Assessment, Overview chapter.
+      </p>
+    </section>
+
+    <section id="vulnerable">
+      <h2>Why Texas Is Especially Vulnerable</h2>
+      <p>
+        Texas is especially vulnerable because it already experiences many of the weather and climate extremes that are becoming more intense in a warming climate. Kunkel et al. describe the Great Plains as a region where warmer months bring “heat waves and convective storms, including thunderstorms and lightning, flood-producing rainstorms, hail, and deadly tornadoes.” The report also notes that hurricanes are “a major weather phenomenon for the coastal region of Texas.”
+      </p>
+      <div class="quote">
+        <strong>Kunkel et al. (2013)</strong>
+        “This area has the highest incidence of tornadoes in the world due to the unique
+confluence of several geographical factors.”
+      </div>
+      <p>
+        The Fifth National Climate Assessment strengthens that argument by showing how significant the region is for understanding climate impacts. As Kunkel et al. (2013) explain, “the Great Plains region experiences a wide range of extreme weather and climate events that affect human society, ecosystems, and infrastructure.” Together, these sources show why Texas is not just relevant to climate change discussions, but central to them.
+      </p>
+     
+    </section>
+
+    <section class="transition">
+      <h2>Next: Rising Temperatures in Texas</h2>
+      <p>
+        Understanding why Texas matters provides the context for the next question: what does the data show about temperature change across the state?
+      </p>
+      <a class="button-link" href="rising-temperatures.html">Go to the Next Page</a>
+    </section>
+  </main>
+
+  <footer class="project-footer">
+    <div class="footer-inner">
+      <p class="footer-title">Climate Change in Texas — Capstone Project</p>
+      <p class="footer-meta">Created by Mia Kelso · Texas Christian University · Spring 2026 · <a href="https://github.com/miakelso/Climate-Change-Capstone" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="why-texas.html">Why Texas</a></li>
+        <li><a href="rising-temperatures.html">Rising Temperatures in Texas</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
 </html>
