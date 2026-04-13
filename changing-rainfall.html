@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Why Texas? | Climate Change in Texas</title>
+  <title>Precipitation | Climate Change in Texas</title>
+
   <style>
     :root {
       --bg: #f6f7f4;
@@ -56,7 +57,7 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     }
 
-    .nav-inner {
+    .top-nav .nav-inner {
       max-width: var(--max-width);
       margin: 0 auto;
       padding: 0 1.5rem;
@@ -71,7 +72,7 @@
     .nav-brand {
       margin: 0;
       color: #eaf6ff;
-      font-size: 0.95rem;
+      font-size: 0.98rem;
       letter-spacing: 0.04em;
       text-transform: uppercase;
       font-weight: 700;
@@ -83,6 +84,7 @@
       align-items: center;
       gap: 0.75rem;
       margin-left: auto;
+      position: relative;
     }
 
     .nav-toggle {
@@ -171,7 +173,7 @@
     .site-header {
       position: relative;
       background: linear-gradient(rgba(14, 35, 51, 0.7), rgba(14, 35, 51, 0.7)),
-        url("images/Great_Stays_of_Texas_Texas_lodging_Texas_bluebonnets.png") center/cover;
+        url("images/precipitation cover image.jpg") center/cover;
       color: white;
       padding: 5rem 1.5rem 4rem;
     }
@@ -179,7 +181,7 @@
     .header-inner,
     main {
       max-width: var(--max-width);
-      margin: 0 auto;
+      margin: auto;
     }
 
     .eyebrow {
@@ -218,7 +220,7 @@
     }
 
     main {
-      padding: 2rem 1.5rem 4rem;
+      padding: 2rem 1.5rem;
       flex: 1;
     }
 
@@ -272,6 +274,14 @@
       font-size: 1.06rem;
     }
 
+    .visual {
+      margin: 1.5rem 0;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      background: #fafbfc;
+    }
+
     .quote {
       background: var(--quote-bg);
       border-left: 5px solid var(--accent);
@@ -287,14 +297,6 @@
       color: var(--accent-dark);
       font-size: 0.95rem;
       letter-spacing: 0.02em;
-    }
-
-    .visual {
-      margin: 1.5rem 0;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      overflow: hidden;
-      background: #fafbfc;
     }
 
     .visual-grid {
@@ -313,6 +315,40 @@
       font-size: 0.95rem;
       color: var(--muted);
       margin-top: 0.75rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .card {
+      background: #f8fbfd;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.1rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .concept-box {
+      background: #f8fbfd;
+      border-left: 5px solid var(--accent);
+      padding: 1.1rem 1.15rem;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+
+    .source-note {
+      font-size: 0.95rem;
+      color: var(--muted);
+      font-style: italic;
     }
 
     .transition {
@@ -335,12 +371,6 @@
       padding: 0.85rem 1.2rem;
       border-radius: 999px;
       font-weight: bold;
-    }
-
-    .source-note {
-      font-size: 0.95rem;
-      color: var(--muted);
-      font-style: italic;
     }
 
     footer {
@@ -453,6 +483,7 @@
         font-size: 0.83rem;
       }
 
+      .cards,
       .visual-grid {
         grid-template-columns: 1fr;
       }
@@ -461,9 +492,15 @@
       .intro-card {
         padding: 1.35rem;
       }
+
+      .header-credit {
+        position: static;
+        margin-top: 1rem;
+      }
     }
   </style>
 </head>
+
 <body>
   <nav class="top-nav" aria-label="Primary">
     <div class="nav-inner">
@@ -483,123 +520,141 @@
   <header class="site-header">
     <div class="header-inner">
       <div class="eyebrow">Climate Change in Texas</div>
-      <h1>Why Texas?</h1>
+      <h1>Changing Rainfall</h1>
       <p class="subtitle">
-        Why regional climate matters, and why Texas is one of the most important places to study the present and future effects of climate change.
+        Rainfall in Texas is becoming less predictable, with increasing swings between wet and dry conditions.
       </p>
       <p class="header-credit">
-        Source: <a href="https://greatstaysoftexas.com/blog/discover-the-magic-of-texas-bluebonnets/" target="_blank" rel="noopener noreferrer">Great Stays of Texas, “Discover the Magic of Texas Bluebonnets”</a>
+        Source: <a href="https://photoblog.statesman.com/rainy-day-at-the-texas-capitol" target="_blank" rel="noopener noreferrer">Collective Vision</a>
       </p>
     </div>
   </header>
 
-  <main>
-    <div class="intro-card">
-      <p>
-        Climate change is a global issue, but its impacts are not evenly distributed. Different regions experience climate change in distinct ways depending on geography, atmospheric patterns, and environmental conditions. Texas provides a particularly important case study because of its size, geographic diversity, and exposure to extreme weather.
-      </p>
-      <ul class="page-nav">
-        <li><a href="#focus">Why Focus on Texas?</a></li>
-        <li><a href="#patterns">Regional Climate Patterns</a></li>
-        <li><a href="#change">A Region Already Experiencing Change</a></li>
-        <li><a href="#vulnerable">Why Texas Is Especially Vulnerable</a></li>
-      </ul>
+<main>
+
+  <div class="intro-card">
+    <p>
+      Climate change is not simply making Texas wetter or drier. Instead, it is increasing variability in precipitation. This means that rainfall patterns are becoming less predictable, with larger swings between extremely wet years and extremely dry years.
+    </p>
+    <ul class="page-nav">
+      <li><a href="#pattern">The Pattern</a></li>
+      <li><a href="#data">What the Data Shows</a></li>
+      <li><a href="#extremes">Increasing Extremes</a></li>
+      <li><a href="#why">Why It Matters</a></li>
+    </ul>
+  </div>
+
+  <section id="pattern">
+    <h2>The Pattern is Changing</h2>
+    <p>
+      Climate change is not simply making Texas wetter or drier. Instead, it is increasing variability in precipitation. This means that rainfall patterns are becoming less predictable, with larger swings between extremely wet years and extremely dry years.
+    </p>
+  </section>
+
+  <section id="data">
+    <h2>What the Data Shows</h2>
+
+    <div class="visual">
+      <figure>
+        <img src="images/precipitation cover image.jpg" alt="Rainfall over Texas" />
+        <figcaption>
+          Replace this image with your annual precipitation graph or keep it as a visual placeholder for the rainfall section.
+        </figcaption>
+      </figure>
     </div>
 
-    <section id="focus">
-      <h2>Why Focus on Texas?</h2>
-      <p>
-        Texas is part of the Southern Great Plains, a region with major climate contrasts and frequent weather extremes. In <em>Regional Climate Trends and Scenarios for the U.S. National Climate Assessment: Part 4. Climate of the U.S. Great Plains</em>, Kunkel et al. describe the area as having “a highly diverse climate with large spatial variations,” including both “some of the coldest and hottest regions of the coterminous U.S. as well as some of the wetter and drier regions.”
-      </p>
-      <p>
-        The report explains that the Gulf of Mexico is the main source of moisture for the region, while the lack of mountain barriers to the north leaves the area exposed to Arctic air outbreaks. This combination helps create the dramatic swings in temperature and precipitation that make Texas especially important in a project about climate change and weather extremes.
-      </p>
-      <p class="source-note">
-        Source: Kunkel et al., 2013, pp. 11–12.
-      </p>
-    </section>
-
-    <section id="patterns">
-      <h2>Regional Climate Patterns in the Great Plains</h2>
-      <p>
-        Kunkel et al. show that the Great Plains include an enormous climate range. The report notes that “average annual temperatures in south Texas are greater than 70°F,” while colder northern and mountain areas are far cooler. It also explains that “average annual precipitation also exhibits an extremely large range,” from less than 10 inches in some western areas to more than 60 inches in the far southeast.
-      </p>
-
-      <div class="visual">
-        <div class="visual-grid">
-          <figure>
-            <img src="images/Annual Temperature.jpeg" alt="Great Plains average annual temperature map from Kunkel et al. report" />
-            <figcaption>
-              Figure 2 from Kunkel et al. showing average annual temperature patterns across the Great Plains region.
-            </figcaption>
-          </figure>
-          <figure>
-            <img src="images/Annual Precipatation.jpeg" alt="Great Plains average annual precipitation map from Kunkel et al. report" />
-            <figcaption>
-              Figure 3 from Kunkel et al. showing average annual precipitation patterns across the Great Plains region.
-            </figcaption>
-          </figure>
+    <div class="visual">
+      <figure>
+        <div style="min-height: 260px; display:flex; align-items:center; justify-content:center; text-align:center; padding: 2rem; color: var(--muted);">
+          Optional: place your year-to-year variability graph here.
         </div>
+      </figure>
+    </div>
+
+    <p>
+      The data shows that precipitation in Texas fluctuates significantly from year to year. Some years experience much higher rainfall than average, while others are much drier. There is no consistent upward or downward trend. Instead, the pattern is irregular and highly variable.
+    </p>
+
+    <p>
+      This variability is the key takeaway. Rather than a steady change, Texas is experiencing more unpredictable rainfall patterns, which makes planning and resource management more difficult.
+    </p>
+  </section>
+
+  <section id="extremes">
+    <h2>Increasing Extremes</h2>
+
+    <div class="quote">
+      <strong>Risser et al. (2023)</strong>
+      Precipitation has “large internal variability,” making trends difficult to detect while extreme events become more important.
+    </div>
+
+    <p>
+      Scientific research supports what the data shows. According to Risser et al., precipitation patterns naturally contain a high level of variability, but climate change is increasing the importance of extreme events. This means that even if average rainfall does not change dramatically, the intensity and frequency of extreme rainfall events can still increase.
+    </p>
+
+    <div class="quote">
+      <strong>Kunkel et al. (2013)</strong>
+      The region experiences highly variable precipitation, including periods of both severe drought and heavy rainfall.
+    </div>
+
+    <p>
+      In Texas and the broader Great Plains, this variability is already a defining characteristic of the climate. Climate change is amplifying these extremes, making both flooding and drought more likely.
+    </p>
+  </section>
+
+  <section id="why">
+    <h2>Why This Matters</h2>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Flooding</h3>
+        <p>Heavier rainfall events increase the risk of flash flooding and infrastructure damage.</p>
       </div>
 
-      <div class="quote">
-        <strong>Kunkel et al. (2013)</strong>
-        “Precipitation tends to be erratic, and severe droughts occur from time to time.”
+      <div class="card">
+        <h3>Water Management</h3>
+        <p>Unpredictable rainfall makes it harder to manage reservoirs and water supply.</p>
       </div>
-      <p>
-        This matters for Texas because it means the state already experiences strong climate variability. When climate change shifts temperatures and rainfall patterns further, those changes can intensify problems that already exist, including drought, flooding, and severe storms.
-      </p>
-      <p class="source-note">
-        Source: Kunkel et al., 2013, pp. 11–13.
-      </p>
-    </section>
 
-    <section id="change">
-      <h2>A Region Already Experiencing Climate Change</h2>
-      <p>
-        The Fifth National Climate Assessment makes it clear that climate change is not only a future concern, but an ever present one. The assessment states that “the effects of human-caused climate change are already far-reaching and worsening across every region of the United States.” That statement is important for a Texas-focused project because it places Texas within a national pattern of measurable climate change.
-      </p>
-    
-      <p>
-        The same assessment explains that “changes in multiple aspects of climate are apparent in every US region,” including warming, changing precipitation, and heavier rainfall events. That broad conclusion helps support the regional evidence shown in Texas and the Southern Great Plains.
-      </p>
-
-      <div class="visual">
-        <figure>
-          <img src="images/figure1.5 in FNCA.jpg" alt="US annual average temperature change graph from the Fifth National Climate Assessment" />
-          <figcaption>
-            Figure 1.5 from the Fifth National Climate Assessment showing that the United States has warmed rapidly since the 1970s.
-          </figcaption>
-        </figure>
+      <div class="card">
+        <h3>Infrastructure</h3>
+        <p>Stormwater systems and drainage infrastructure are strained by extreme rainfall events.</p>
       </div>
-      <p class="source-note">
-        Source: Fifth National Climate Assessment, Overview chapter.
-      </p>
-    </section>
 
-    <section id="vulnerable">
-      <h2>Why Texas Is Especially Vulnerable</h2>
-      <p>
-        Texas is especially vulnerable because it already experiences many of the weather and climate extremes that are becoming more intense in a warming climate. Kunkel et al. describe the Great Plains as a region where warmer months bring “heat waves and convective storms, including thunderstorms and lightning, flood-producing rainstorms, hail, and deadly tornadoes.” The report also notes that hurricanes are “a major weather phenomenon for the coastal region of Texas.”
-      </p>
-      <div class="quote">
-        <strong>Kunkel et al. (2013)</strong>
-        “This area has the highest incidence of tornadoes in the world due to the unique
-confluence of several geographical factors.”
+      <div class="card">
+        <h3>Agriculture</h3>
+        <p>Farmers must deal with both drought conditions and sudden heavy rainfall.</p>
       </div>
-      <p>
-        The Fifth National Climate Assessment strengthens that argument by showing how significant the region is for understanding climate impacts. As Kunkel et al. (2013) explain, “the Great Plains region experiences a wide range of extreme weather and climate events that affect human society, ecosystems, and infrastructure.” Together, these sources show why Texas is not just relevant to climate change discussions, but central to them.
-      </p>
-     
-    </section>
+    </div>
 
-    <section class="transition">
-      <h2>Next: Rising Temperatures in Texas</h2>
-      <p>
-        Understanding why Texas matters provides the context for the next question: what does the data show about temperature change across the state?
-      </p>
-      <a class="button-link" href="rising-temperatures.html">Go to the Next Page</a>
-    </section>
+    <p class="source-note">
+      Source: NOAA National Centers for Environmental Information, PRISM Climate Group, Risser et al. (2023), and Kunkel et al. (2013).
+    </p>
+  </section>
+
+  <section>
+    <div class="concept-box">
+      Key Concept: Climate change does not simply increase or decrease rainfall. It increases variability, leading to more extreme swings between wet and dry conditions.
+    </div>
+  </section>
+
+  <section>
+    <h2>Sources</h2>
+    <ul>
+      <li><a href="#">NOAA National Centers for Environmental Information</a></li>
+      <li><a href="#">PRISM Climate Group</a></li>
+      <li><a href="#">Risser et al. (2023)</a></li>
+      <li><a href="#">Kunkel et al. (2013)</a></li>
+    </ul>
+  </section>
+
+  <section class="transition">
+    <h2>Next: Drought in Texas</h2>
+    <p>
+      These increasingly unpredictable rainfall patterns contribute directly to more severe drought conditions across Texas.
+    </p>
+  </section>
+
   </main>
 
   <footer class="project-footer">
@@ -613,6 +668,8 @@ confluence of several geographical factors.”
       </ul>
     </div>
   </footer>
+
   <script src="nav.js" defer></script>
+
 </body>
 </html>

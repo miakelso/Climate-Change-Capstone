@@ -115,6 +115,11 @@ body {
   background: rgba(255, 255, 255, 0.16);
 }
 
+.nav-links a[aria-current="page"] {
+  background: rgba(11, 114, 133, 0.42);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14);
+}
+
 .top-nav.is-collapsed .nav-toggle {
   display: inline-flex;
 }

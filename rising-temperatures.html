@@ -132,6 +132,11 @@
       background: rgba(255, 255, 255, 0.16);
     }
 
+    .nav-links a[aria-current="page"] {
+      background: rgba(31, 95, 139, 0.48);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.14);
+    }
+
     .top-nav.is-collapsed .nav-toggle {
       display: inline-flex;
     }
@@ -529,6 +534,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="why-texas.html">Why Texas?</a></li>
           <li><a href="rising-temperatures.html">Rising Temperatures</a></li>
+          <li><a href="changing-rainfall.html">Changing Rainfall</a></li>
         </ul>
       </div>
     </div>
@@ -542,7 +548,7 @@
         Texas has warmed over the past several decades, and that warming is making extreme heat a more serious part of the state’s climate.
       </p>
       <p class="header-credit">
-        Source: <a href="/Users/miakelso/Documents/GitHub/Climate-Change-Capstone/images/Rising temps background.jpeg" target="_blank" rel="noopener noreferrer">Facebook</a>
+        Source: <a href="https://www.facebook.com/FtBendCountyFMO/photos/-texas-heat-safety-reminder-from-the-fire-marshal-as-temperatures-continue-to-so/1178875170942610/" target="_blank" rel="noopener noreferrer">Facebook</a>
       </p>
     </div>
   </header>
@@ -712,28 +718,6 @@ are unavoidable.”
     </div>
   </footer>
 
-  <script>
-    const nav = document.querySelector(".top-nav");
-    const toggle = document.querySelector(".nav-toggle");
-
-    function updateNavLayout() {
-      if (window.innerWidth <= 760) {
-        nav.classList.add("is-collapsed");
-      } else {
-        nav.classList.remove("is-collapsed", "is-open");
-        if (toggle) toggle.setAttribute("aria-expanded", "false");
-      }
-    }
-
-    if (toggle) {
-      toggle.addEventListener("click", () => {
-        const isOpen = nav.classList.toggle("is-open");
-        toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-      });
-    }
-
-    window.addEventListener("resize", updateNavLayout);
-    updateNavLayout();
-  </script>
+  <script src="nav.js" defer></script>
 </body>
 </html>

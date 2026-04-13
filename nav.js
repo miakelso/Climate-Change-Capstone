@@ -12,6 +12,18 @@ document.querySelectorAll('.top-nav').forEach((nav, index) => {
   links.id = navId;
   toggle.setAttribute('aria-controls', navId);
 
+  const currentFile = window.location.pathname.split('/').pop() || 'index.html';
+
+  nav.querySelectorAll('.nav-links a').forEach((link) => {
+    const linkFile = new URL(link.href, document.baseURI).pathname.split('/').pop() || 'index.html';
+
+    if (linkFile === currentFile) {
+      link.setAttribute('aria-current', 'page');
+    } else {
+      link.removeAttribute('aria-current');
+    }
+  });
+
   const getAvailableWidth = () => {
     const container = nav.querySelector('.container, .nav-inner');
 
