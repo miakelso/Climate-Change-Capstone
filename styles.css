@@ -23,6 +23,9 @@ body {
   color: var(--text);
   background: var(--bg);
   line-height: 1.65;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .container {
@@ -40,6 +43,7 @@ body {
 }
 
 .top-nav .container {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -54,16 +58,47 @@ body {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   font-weight: 700;
+  flex-shrink: 0;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-left: auto;
+}
+
+.nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.6rem;
+  min-height: 2.6rem;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #f1f9ff;
+  font: inherit;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.nav-toggle:hover,
+.nav-toggle:focus-visible {
+  background: rgba(255, 255, 255, 0.18);
 }
 
 .nav-links {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   gap: 0.35rem;
   list-style: none;
   margin: 0;
   padding: 0;
+  white-space: nowrap;
 }
 
 .nav-links a {
@@ -78,6 +113,41 @@ body {
 .nav-links a:hover,
 .nav-links a:focus-visible {
   background: rgba(255, 255, 255, 0.16);
+}
+
+.top-nav.is-collapsed .nav-toggle {
+  display: inline-flex;
+}
+
+.top-nav.is-collapsed .nav-menu {
+  margin-left: auto;
+}
+
+.top-nav.is-collapsed .nav-links {
+  display: none;
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  z-index: 1001;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.25rem;
+  min-width: min(18rem, calc(100vw - 2rem));
+  padding: 0.65rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  background: rgba(8, 20, 32, 0.98);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+}
+
+.top-nav.is-collapsed.is-open .nav-links {
+  display: flex;
+}
+
+.top-nav.is-collapsed .nav-links a {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
 }
 
 .hero {
@@ -277,6 +347,8 @@ h2 {
   color: #dbe9f6;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   padding: 1.8rem 0 2.2rem;
+  margin-top: auto;
+  width: 100%;
 }
 
 .project-footer .container {
@@ -328,6 +400,10 @@ h2 {
 .footer-links a:focus-visible {
   background: rgba(255, 255, 255, 0.18);
   transform: translateY(-1px);
+}
+
+main {
+  flex: 1;
 }
 
 @media (max-width: 950px) {

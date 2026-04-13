@@ -32,6 +32,9 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     img {
@@ -62,6 +65,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 1rem;
+      position: relative;
     }
 
     .nav-brand {
@@ -71,16 +75,47 @@
       letter-spacing: 0.04em;
       text-transform: uppercase;
       font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-left: auto;
+    }
+
+    .nav-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      min-width: 2.6rem;
+      min-height: 2.6rem;
+      padding: 0.35rem 0.7rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #f1f9ff;
+      font: inherit;
+      font-size: 1.25rem;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .nav-toggle:hover,
+    .nav-toggle:focus-visible {
+      background: rgba(255, 255, 255, 0.18);
     }
 
     .nav-links {
       display: flex;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       align-items: center;
       gap: 0.35rem;
       list-style: none;
       margin: 0;
       padding: 0;
+      white-space: nowrap;
     }
 
     .nav-links a {
@@ -95,6 +130,37 @@
     .nav-links a:hover,
     .nav-links a:focus-visible {
       background: rgba(255, 255, 255, 0.16);
+    }
+
+    .top-nav.is-collapsed .nav-toggle {
+      display: inline-flex;
+    }
+
+    .top-nav.is-collapsed .nav-links {
+      display: none;
+      position: absolute;
+      top: calc(100% + 0.5rem);
+      right: 1.5rem;
+      z-index: 1001;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.25rem;
+      min-width: min(18rem, calc(100vw - 2rem));
+      padding: 0.65rem;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 16px;
+      background: rgba(8, 20, 32, 0.98);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+    }
+
+    .top-nav.is-collapsed.is-open .nav-links {
+      display: flex;
+    }
+
+    .top-nav.is-collapsed .nav-links a {
+      display: block;
+      width: 100%;
+      padding: 0.5rem 0.75rem;
     }
 
     .site-header {
@@ -148,6 +214,7 @@
 
     main {
       padding: 2rem 1.5rem 4rem;
+      flex: 1;
     }
 
     .intro-card {
@@ -272,9 +339,10 @@
     }
 
     footer {
-      max-width: var(--max-width);
-      margin: 2rem auto 0;
-      padding: 0 1.5rem 3rem;
+      width: 100%;
+      max-width: none;
+      margin: 2rem 0 0;
+      padding: 0;
       color: var(--muted);
       font-size: 0.95rem;
     }
@@ -395,11 +463,14 @@
   <nav class="top-nav" aria-label="Primary">
     <div class="nav-inner">
       <p class="nav-brand">Climate Change in Texas</p>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="why-texas.html">Why Texas?</a></li>
-        <li><a href="rising-temperatures.html">Rising Temperatures</a></li>
-      </ul>
+      <div class="nav-menu">
+        <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="why-texas.html">Why Texas?</a></li>
+          <li><a href="rising-temperatures.html">Rising Temperatures</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 
@@ -536,5 +607,6 @@ confluence of several geographical factors.”
       </ul>
     </div>
   </footer>
+  <script src="nav.js" defer></script>
 </body>
 </html>

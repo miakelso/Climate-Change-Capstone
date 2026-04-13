@@ -1,49 +1,739 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rising Temperatures in Texas | Climate Change in Texas</title>
-    <meta
-      name="description"
-      content="Overview page for rising temperature trends in Texas and related climate impacts."
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <nav class="top-nav" aria-label="Primary">
-      <div class="container">
-        <p class="nav-brand">Climate Change in Texas</p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rising Temperatures | Climate Change in Texas</title>
+  <style>
+    :root {
+      --bg: #f6f7f4;
+      --surface: #ffffff;
+      --text: #1f2933;
+      --muted: #52606d;
+      --accent: #1f5f8b;
+      --accent-dark: #154360;
+      --border: #d9e2ec;
+      --quote-bg: #eef5fb;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --max-width: 1000px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      border-radius: 14px;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(8, 20, 32, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      min-height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      position: relative;
+    }
+
+    .nav-brand {
+      margin: 0;
+      color: #eaf6ff;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-left: auto;
+    }
+
+    .nav-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      min-width: 2.6rem;
+      min-height: 2.6rem;
+      padding: 0.35rem 0.7rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #f1f9ff;
+      font: inherit;
+      font-size: 1.25rem;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .nav-toggle:hover,
+    .nav-toggle:focus-visible {
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      gap: 0.35rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      white-space: nowrap;
+    }
+
+    .nav-links a {
+      color: #f1f9ff;
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      padding: 0.38rem 0.64rem;
+      border-radius: 999px;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .top-nav.is-collapsed .nav-toggle {
+      display: inline-flex;
+    }
+
+    .top-nav.is-collapsed .nav-links {
+      display: none;
+      position: absolute;
+      top: calc(100% + 0.5rem);
+      right: 1.5rem;
+      z-index: 1001;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.25rem;
+      min-width: min(18rem, calc(100vw - 2rem));
+      padding: 0.65rem;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 16px;
+      background: rgba(8, 20, 32, 0.98);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+    }
+
+    .top-nav.is-collapsed.is-open .nav-links {
+      display: flex;
+    }
+
+    .top-nav.is-collapsed .nav-links a {
+      display: block;
+      width: 100%;
+      padding: 0.5rem 0.75rem;
+    }
+
+    .site-header {
+      position: relative;
+      background: linear-gradient(rgba(14, 35, 51, 0.72), rgba(14, 35, 51, 0.72)),
+        url("images/Rising temps background.jpeg") center/cover;
+      color: white;
+      padding: 5rem 1.5rem 4rem;
+    }
+
+    .header-inner,
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.9;
+      margin-bottom: 0.75rem;
+    }
+
+    h1 {
+      font-size: clamp(2.3rem, 5vw, 4rem);
+      line-height: 1.1;
+      margin: 0 0 1rem;
+    }
+
+    .subtitle {
+      font-size: 1.15rem;
+      max-width: 780px;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.95);
+    }
+
+    .header-credit {
+      position: absolute;
+      left: 1.5rem;
+      bottom: 0.75rem;
+      margin: 0;
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .header-credit a {
+      color: inherit;
+    }
+
+    main {
+      padding: 2rem 1.5rem 4rem;
+      flex: 1;
+    }
+
+    .intro-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      padding: 1.75rem;
+      margin-top: -2rem;
+      position: relative;
+    }
+
+    .page-nav {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin: 1rem 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .page-nav a {
+      text-decoration: none;
+      background: #f0f4f8;
+      border: 1px solid var(--border);
+      padding: 0.55rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.95rem;
+    }
+
+    section {
+      margin-top: 2.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      padding: 2rem;
+    }
+
+    h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      line-height: 1.2;
+      margin-top: 0;
+      margin-bottom: 1rem;
+      color: var(--accent-dark);
+    }
+
+    h3 {
+      margin: 0 0 0.6rem;
+      color: var(--accent-dark);
+      font-size: 1.08rem;
+    }
+
+    p {
+      margin: 0 0 1rem;
+      font-size: 1.06rem;
+    }
+
+    .quote {
+      background: var(--quote-bg);
+      border-left: 5px solid var(--accent);
+      padding: 1rem 1.1rem;
+      margin: 1.25rem 0;
+      border-radius: 10px;
+      font-size: 1.02rem;
+    }
+
+    .quote strong {
+      display: block;
+      margin-bottom: 0.35rem;
+      color: var(--accent-dark);
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+    }
+
+    .visual {
+      margin: 1.5rem 0;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      background: #fafbfc;
+    }
+
+    figure {
+      margin: 0;
+      padding: 1rem;
+    }
+
+    figcaption {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-top: 0.75rem;
+    }
+
+    .placeholder-box {
+      min-height: 420px;
+      border: 2px dashed #aac2d6;
+      border-radius: 12px;
+      background: linear-gradient(180deg, #f8fbfd 0%, #f2f7fa 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .placeholder-box.small {
+      min-height: 320px;
+    }
+
+    .visual-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(240px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .info-card {
+      background: #f8fbfd;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.1rem;
+    }
+
+    .info-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .source-links {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .source-links a {
+      text-decoration: none;
+    }
+
+    .transition {
+      background: linear-gradient(135deg, #12344d, #1f5f8b);
+      color: white;
+      text-align: center;
+    }
+
+    .transition h2,
+    .transition p {
+      color: white;
+    }
+
+    .button-link {
+      display: inline-block;
+      margin-top: 0.5rem;
+      background: white;
+      color: var(--accent-dark);
+      text-decoration: none;
+      padding: 0.85rem 1.2rem;
+      border-radius: 999px;
+      font-weight: bold;
+    }
+
+    .source-note {
+      font-size: 0.95rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    footer {
+      width: 100%;
+      max-width: none;
+      margin: 2rem 0 0;
+      padding: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .project-footer {
+      background: linear-gradient(135deg, #0f1b27, #17344a);
+      color: #dbe9f6;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 1.8rem 0 2.2rem;
+      margin-top: 2rem;
+    }
+
+    .project-footer .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .project-footer a {
+      color: #9fd9ff;
+    }
+
+    .footer-title {
+      margin: 0;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .footer-meta {
+      margin: 0.4rem 0 0;
+      color: #c5d7e8;
+      font-size: 0.94rem;
+      max-width: 820px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+      margin: 0.85rem 0 0.2rem;
+      padding: 0;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      padding: 0.36rem 0.72rem;
+      font-size: 0.88rem;
+      color: #9fd9ff;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .footer-links a:hover,
+    .footer-links a:focus-visible {
+      background: rgba(255, 255, 255, 0.18);
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 760px) {
+      .nav-inner {
+        min-height: 52px;
+        align-items: flex-start;
+        padding-top: 0.45rem;
+        padding-bottom: 0.45rem;
+      }
+
+      .nav-brand {
+        font-size: 0.84rem;
+      }
+
+      .nav-links {
+        gap: 0.2rem;
+        justify-content: flex-end;
+      }
+
+      .nav-links a {
+        font-size: 0.84rem;
+        padding: 0.33rem 0.5rem;
+      }
+
+      .project-footer {
+        padding: 1.25rem 0 1.55rem;
+      }
+
+      .footer-title {
+        font-size: 0.95rem;
+      }
+
+      .footer-meta {
+        font-size: 0.88rem;
+      }
+
+      .footer-links a {
+        font-size: 0.83rem;
+      }
+
+      .visual-grid,
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section,
+      .intro-card {
+        padding: 1.35rem;
+      }
+
+      .placeholder-box {
+        min-height: 280px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="top-nav" aria-label="Primary">
+    <div class="nav-inner">
+      <p class="nav-brand">Climate Change in Texas</p>
+      <div class="nav-menu">
+        <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">☰</button>
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="why-texas.html">Why Texas?</a></li>
           <li><a href="rising-temperatures.html">Rising Temperatures</a></li>
         </ul>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <main>
-      <section class="section intro">
-        <div class="container">
-          <h1>Rising Temperatures in Texas</h1>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="eyebrow">Climate Change in Texas</div>
+      <h1>Rising Temperatures</h1>
+      <p class="subtitle">
+        Texas has warmed over the past several decades, and that warming is making extreme heat a more serious part of the state’s climate.
+      </p>
+      <p class="header-credit">
+        Source: <a href="/Users/miakelso/Documents/GitHub/Climate-Change-Capstone/images/Rising temps background.jpeg" target="_blank" rel="noopener noreferrer">Facebook</a>
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <div class="intro-card">
+      <p>
+        Climate change in Texas is visible in the temperature record. Long-term data shows that average annual temperatures have risen over time, and scientific studies explain why this warming matters for heatwaves, health, energy demand, wildfire conditions, and agriculture.
+      </p>
+      <ul class="page-nav">
+        <li><a href="#warming-trend">The Warming Trend</a></li>
+        <li><a href="#reading-data">Reading the Data</a></li>
+        <li><a href="#extreme-heat">From Warming to Heatwaves</a></li>
+        <li><a href="#why-matters">Why It Matters</a></li>
+      </ul>
+    </div>
+
+    <section id="warming-trend">
+      <h2>Texas has warmed over time</h2>
+      <p>
+        The most direct evidence on this page comes from NOAA's nClimDiv dataset. By averaging the temperature data into one statewide annual value for each year, it becomes easier to see how Texas' temperatures have changed over time.
+      </p>
+
+      <div class="visual">
+        <figure>
+    
+            <img src="images/Annual Temperature Data 1970-2020 (nClimDiv).png" alt="Placeholder for Texas average annual temperature graph" />
+          
+          <figcaption>
+            Texas average annual temperature based on NOAA nClimDiv data.
+          </figcaption>
+        </figure>
+      </div>
+
+      <p>
+        Even with year to year fluctuations, the long-term direction of the graph is upward. More recent years are generally warmer than earlier ones, which is exactly the kind of pattern expected in a warming climate.
+      </p>
+
+      <div class="quote">
+        <strong>Nielsen-Gammon (2024)</strong>
+        “Since 1950, the trend has been 0.29 °F per decade, and since 1975, 0.62 °F per decade. Recent temperatures have increased in all seasons and in all regions of Texas.”
+      </div>
+
+      <p>
+        This quote is important because it confirms that the warming shown in the graph is not limited to a single region or season. It is a statewide trend.
+      </p>
+    </section>
+
+    <section id="reading-data">
+      <h2>How to read the trend</h2>
+      <p>
+        A climate graph does not need to rise every single year to show warming. What matters is the larger pattern across many decades. In Texas, annual temperatures still vary from year to year, but the later part of the record is clearly warmer than the earlier part.
+      </p>
+
+      <p>
+        That means the graph is showing more than isolated hot years. It is showing a long-term shift in baseline climate conditions. When average temperatures rise, extreme heat becomes easier to reach and sustain.
+      </p>
+
+      <div class="visual">
+        <figure>
+          <img src ="images/nClimDiv temp:10 year rolling avg.png" alt="Placeholder for Texas average annual temperature graph" />
+          
+          
+          <figcaption>
+            10 year rolling-average line of Texas annual average temperature, displaying the warming pattern in Texas.
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="quote">
+        <strong>Nielsen-Gammon (2024)</strong>
+        “If recent trends continue, as expected, a middle-of-the-road estimate of the overall rate of temperature increase in Texas would be about 0.6 °F per decade.”
+      </div>
+
+      <p>
+        Nielsen-Gammon's projection makes the trend more concrete: if the recent rate continues, a typical Texas year in the near future will be warmer than almost all years in the historical record.
+      </p>
+    </section>
+
+    <section id="extreme-heat">
+      <h2>Rising averages lead to more extreme heat</h2>
+      <p>
+        Average warming matters because it changes the conditions that produce heatwaves. When the baseline climate gets hotter, dangerous heat becomes more common and lasts longer.
+      </p>
+
+      <div class="quote">
+        <strong>Perkins-Kirkpatrick &amp; Gibson (2017)</strong>
+        “As anthropogenic influence on the global climate intensifies, future increases in heatwaves
+are unavoidable.”
+      </div>
+
+      <p>
+        Rising average temperatures are not just increasing overall warmth; they are making extreme heat more frequent and more persistent. As shown in the graph “Average Annual Number of 100°F Days,” hotter baseline conditions mean that Texas is experiencing more days of extreme heat than in the past. This aligns with broader climate research, which finds that “future increases in heatwaves are unavoidable” as human influence on the climate grows. Together, the data and research show that warming is not just gradual. It is actively increasing the frequency and severity of extreme heat across Texas.
+      </p>
+
+      <div class="visual">
+        <figure>
+          <img src ="images/Nielsen Temp.png" alt="Graph for Average Annual Number of 100-Degree Days in Texas" />
+          <figcaption>
+            Texas heatwave days from 1974 to 2023.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="why-matters">
+      <h2>Why this matters in Texas</h2>
+      <p>
+        Rising temperatures affect more than climate statistics. In Texas, they shape public health risks, energy use, wildfire conditions, and agricultural stress.
+      </p>
+
+      <div class="cards-grid">
+        <div class="info-card">
+          <h3>Health</h3>
           <p>
-            This page is ready for your temperature-trend analysis content.
-            Add your charts, citations, and key findings here.
+            Hotter conditions increase the risk of heat exhaustion, dehydration, and heat-related illness, especially during extended summer heat events.
           </p>
         </div>
-      </section>
-    </main>
 
-    <footer class="project-footer">
-      <div class="container">
-        <p class="footer-title">Climate Change in Texas — Capstone Project</p>
-        <p class="footer-meta">Created by Mia Kelso · Texas Christian University · Spring 2026 · <a href="https://github.com/miakelso/Climate-Change-Capstone" target="_blank" rel="noopener noreferrer">GitHub</a></p>
-        <ul class="footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="why-texas.html">Why Texas?</a></li>
-          <li><a href="rising-temperatures.html">Rising Temperatures</a></li>
-        </ul>
+        <div class="info-card">
+          <h3>Energy Demand</h3>
+          <p>
+            Higher temperatures increase air-conditioning use and place additional strain on the electric grid during peak summer demand.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>Wildfire Conditions</h3>
+          <p>
+            Rising heat can dry vegetation and increase evaporation, creating conditions that are more favorable for wildfire in several parts of Texas.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>Agriculture</h3>
+          <p>
+            Heat stress affects crops, livestock, and soil moisture, making agricultural production and water management more difficult.
+          </p>
+        </div>
       </div>
-    </footer>
-  </body>
+
+      <p style="margin-top: 1.25rem;">
+        In other words, rising temperatures are not just a scientific abstraction. They affect how Texans live, work, and prepare for the future.
+      </p>
+    </section>
+
+  
+
+    <section class="transition">
+      <h2>Next: Changing Rainfall Patterns</h2>
+      <p>
+        Temperature is only one part of the climate story. The next page examines how climate change is affecting precipitation and rainfall variability in Texas.
+      </p>
+      <a class="button-link" href="changing-rainfall.html">Go to the Next Page</a>
+    </section>
+  </main>
+
+  <footer class="project-footer">
+    <div class="footer-inner">
+      <p class="footer-title">Climate Change in Texas — Capstone Project</p>
+      <p class="footer-meta">Created by Mia Kelso · Texas Christian University · Spring 2026 · <a href="https://github.com/miakelso/Climate-Change-Capstone" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="why-texas.html">Why Texas?</a></li>
+        <li><a href="rising-temperatures.html">Rising Temperatures</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.querySelector(".top-nav");
+    const toggle = document.querySelector(".nav-toggle");
+
+    function updateNavLayout() {
+      if (window.innerWidth <= 760) {
+        nav.classList.add("is-collapsed");
+      } else {
+        nav.classList.remove("is-collapsed", "is-open");
+        if (toggle) toggle.setAttribute("aria-expanded", "false");
+      }
+    }
+
+    if (toggle) {
+      toggle.addEventListener("click", () => {
+        const isOpen = nav.classList.toggle("is-open");
+        toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+    }
+
+    window.addEventListener("resize", updateNavLayout);
+    updateNavLayout();
+  </script>
+</body>
 </html>
