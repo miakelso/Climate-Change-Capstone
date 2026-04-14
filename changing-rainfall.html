@@ -48,7 +48,7 @@
       color: var(--accent);
     }
 
-  .top-nav {
+    .top-nav {
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -169,7 +169,6 @@
       padding: 0.5rem 0.75rem;
     }
 
-
     .site-header {
       position: relative;
       background: linear-gradient(rgba(14, 35, 51, 0.7), rgba(14, 35, 51, 0.7)),
@@ -269,6 +268,12 @@
       color: var(--accent-dark);
     }
 
+    h3 {
+      margin: 0 0 0.5rem;
+      color: var(--accent-dark);
+      font-size: 1.05rem;
+    }
+
     p {
       margin: 0 0 1rem;
       font-size: 1.06rem;
@@ -317,6 +322,23 @@
       margin-top: 0.75rem;
     }
 
+    .placeholder-box {
+      min-height: 340px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      color: var(--muted);
+      background: linear-gradient(180deg, #fafcfd 0%, #f4f8fb 100%);
+      border: 2px dashed #b8cddd;
+      border-radius: 12px;
+    }
+
+    .placeholder-box.small {
+      min-height: 260px;
+    }
+
     .cards {
       display: grid;
       grid-template-columns: repeat(2, minmax(220px, 1fr));
@@ -349,6 +371,14 @@
       font-size: 0.95rem;
       color: var(--muted);
       font-style: italic;
+    }
+
+    .source-links {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      display: grid;
+      gap: 0.75rem;
     }
 
     .transition {
@@ -497,6 +527,10 @@
         position: static;
         margin-top: 1rem;
       }
+
+      .placeholder-box {
+        min-height: 240px;
+      }
     }
   </style>
 </head>
@@ -511,7 +545,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="why-texas.html">Why Texas?</a></li>
           <li><a href="rising-temperatures.html">Rising Temperatures</a></li>
-          <li><a href="changing-rainfall.html">Changing Rainfall</a></li>
+          <li><a href="changing-rainfall.html" aria-current="page">Changing Rainfall</a></li>
         </ul>
       </div>
     </div>
@@ -530,122 +564,239 @@
     </div>
   </header>
 
-<main>
+  <main>
 
-  <div class="intro-card">
-    <p>
-      Climate change is not simply making Texas wetter or drier. Instead, it is increasing variability in precipitation. This means that rainfall patterns are becoming less predictable, with larger swings between extremely wet years and extremely dry years.
-    </p>
-    <ul class="page-nav">
-      <li><a href="#data">What the Data Shows</a></li>
-      <li><a href="#extremes">Increasing Extremes</a></li>
-      <li><a href="#why">Why It Matters</a></li>
-    </ul>
+    <div class="intro-card">
+      <p>
+        Climate change is not simply making Texas wetter or drier. Instead, it is increasing variability in precipitation. This means that rainfall patterns are becoming less predictable, with larger swings between extremely wet years and extremely dry years. Rather than a steady trend, Texas is experiencing more irregular and extreme fluctuations in rainfall.
+      </p>
+      <ul class="page-nav">
+        <li><a href="#data">What the Data Shows</a></li>
+        <li><a href="#irregular">Why Rainfall Looks Irregular</a></li>
+        <li><a href="#extremes">From Variability to Extremes</a></li>
+        <li><a href="#why">Why It Matters</a></li>
+        <li><a href="#concept">Key Concept</a></li>
+      </ul>
+    </div>
+
+    <section id="data">
+      <h2>What the data shows</h2>
+
+      <div class="visual">
+        <figure>
+          <img src="images/Prism TX Annual Precipitation Graph.png" alt="Texas annual precipitation graph">
+          <figcaption>
+            Annual precipitation in Texas, 1970-2020, based on PRISM climate data.
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="visual">
+  <figure>
+    <img src="images/Texas Precipitation Variability Graph.png" alt="Year-to-year precipitation change in Texas">
+    <figcaption>
+      Year-to-year changes in annual precipitation in Texas (1970–2020), based on PRISM climate data.
+    </figcaption>
+  </figure>
+</div>
+<p>
+  The data shows that precipitation in Texas fluctuates significantly from year to year, with no consistent upward or downward trend. Some years experience much higher rainfall than average, while others are much drier, creating a pattern that appears irregular rather than stable.
+</p>
+
+<p>
+  This variability is the most important takeaway. Instead of gradually becoming wetter or drier, Texas is experiencing wider swings between extremes, making rainfall patterns more difficult to predict.
+</p>
+
+<p>
+  The second graph above highlights this variability more directly by showing how much precipitation changes from one year to the next. Some years experience large increases in rainfall, while others show sharp declines. These swings are often abrupt, with no consistent pattern over time.
+</p>
+
+<p>
+  Rather than following a steady trend, precipitation in Texas is highly unpredictable. These significant year-to-year fluctuations suggest that climate change is influencing rainfall through increased variability and instability rather than simple changes in averages. Some of the largest year-to-year changes exceed 10 inches, highlighting how dramatic these fluctuations can be.
+</p>
+
+<p class="source-note">
+  Source: PRISM Climate Group (2024).</p>
+</section>
+  
+  <section id="spatial">
+  <h2>Spatial patterns of rainfall</h2>
+
+  <p>
+    While precipitation varies over time, it also varies significantly across space. Different regions of Texas receive very different amounts of rainfall, and these patterns help explain why statewide averages can appear inconsistent.
+  </p>
+
+  <div class="visual">
+    <figure>
+      <img src="images/texas_precip_1970_map.png" alt="Texas precipitation map 1970">
+      <figcaption>
+        Total annual precipitation across the United States in 1970. Texas shows clear regional differences, with wetter conditions in the southeast and drier conditions in the northwest.
+      </figcaption>
+    </figure>
+  </div>
+  <div class="visual">
+    <figure>
+      <img src="images/texas_precip_2020_map.png" alt="Texas precipitation map 2020">
+      <figcaption>
+        Total annual precipitation across the United States in 2020. Regional differences persist, with variability across Texas reflecting shifting precipitation patterns.
+      </figcaption>
+    </figure>
   </div>
 
-  <section id="data">
-    <h2>What the Data Shows</h2>
+  <p>
+    These maps show that precipitation in Texas is not evenly distributed. Eastern Texas generally receives more rainfall, while western regions remain much drier. This spatial variation is influenced by geography, atmospheric circulation, and proximity to moisture sources such as the Gulf of Mexico.
+  </p>
 
-    <div class="visual">
-      <figure>
-        <img src="images/precipitation cover image.jpg" alt="Rainfall over Texas" />
-        <figcaption>
-          Replace this image with your annual precipitation graph or keep it as a visual placeholder for the rainfall section.
-        </figcaption>
-      </figure>
-    </div>
+  <p>
+    When combined with the year-to-year variability shown in the graphs above, these spatial differences help explain why rainfall patterns in Texas are complex and difficult to predict. Climate change does not affect all regions in the same way, and understanding these regional differences is essential for interpreting long-term trends.
+  </p>
 
-    <div class="visual">
-      <figure>
-        <div style="min-height: 260px; display:flex; align-items:center; justify-content:center; text-align:center; padding: 2rem; color: var(--muted);">
-          Optional: place your year-to-year variability graph here.
+  <p class="source-note">
+    Source: PRISM Climate Group (2024).
+  </p>
+  </section>
+</section>  
+    </section>
+
+    <section id="irregular">
+      <h2>Why rainfall looks so irregular</h2>
+
+      <p>
+        Unlike temperature, which often shows a clear long-term upward trend, precipitation is harder to interpret. Rainfall naturally varies from year to year because it depends on changing atmospheric circulation, seasonal storm tracks, and regional weather systems. That means average precipitation alone does not always reveal the full climate signal.
+      </p>
+
+      <div class="quote">
+        <strong>Risser et al. (2023)</strong>
+        “Unfortunately, continental-scale statements about the human influence on precipitation do not provide the spatially resolved conclusions needed to inform assessments of how much climate change is happening locally.”
+      </div>
+
+      <p>
+        Risser et al. argue that precipitation is especially difficult to analyze at local and regional scales because the data is more complex than it is for temperature. They note that precipitation is shaped by “observational uncertainty, large internal variability, and modeling uncertainty,” which makes clear trends harder to detect even when change is occurring. That complexity helps explain why Texas rainfall can look chaotic from year to year. 
+      </p>
+
+      <div class="quote">
+        <strong>Risser et al. (2023)</strong>
+        “In these cases, it is important to understand regional (sub-continental) changes as well as the spatial patterns of change.”
+      </div>
+
+      <p>
+        In other words, the irregular pattern in the graph is not evidence that nothing is changing. It suggests that climate change is affecting rainfall through increasing variability and regional differences, not through one simple statewide average.
+      </p>
+       <p class="source-note">
+    Source: Risser et al. (2023).
+  </p>
+    </section>
+
+    <section id="extremes">
+      <h2>From variability to extreme events</h2>
+
+      <p>
+        As variability increases, the likelihood of extreme precipitation events also rises. This means that even if average rainfall stays relatively close to past values, the way that rain falls can still change substantially. More precipitation may come in short, intense bursts, while longer dry gaps separate those events.
+      </p>
+
+      <div class="quote">
+        <strong>Kunkel et al. (2013)</strong>
+        “Precipitation tends to be erratic, and severe droughts occur from time to time.”
+      </div>
+
+      <p>
+        Kunkel et al. describe the Great Plains climate, including Texas, as one in which precipitation is already naturally uneven. That existing variability matters because climate change does not begin from a stable baseline. It intensifies a system that already swings between wet and dry conditions. 
+      </p>
+
+      <div class="quote">
+        <strong>Kunkel et al. (2013)</strong>
+        “The Great Plains region experiences a wide range of extreme weather and climate events that affect human society, ecosystems, and infrastructure.”
+      </div>
+
+      <p>
+        This helps explain why changing rainfall is so important. Texas is not only seeing irregular annual precipitation totals; it is part of a region where extreme weather already has major consequences. When rainfall becomes more variable, both heavy rainfall and prolonged dryness become more disruptive.
+      </p>
+
+      <div class="quote">
+        <strong>Risser et al. (2023)</strong>
+        “Even though there are well-documented 50- to 100-year trends in seasonal mean and extreme precipitation ... existing model-based detection and attribution studies that explore local changes in precipitation find essentially no detectable signal.”
+      </div>
+
+      <p>
+        This quote highlights an important distinction. The absence of one simple, obvious trend line does not mean there is no change. It means precipitation change often appears through regional variability and extremes rather than through a clean statewide increase or decrease. 
+      </p>
+
+      <p>
+        Together, the data and research show that precipitation in Texas is becoming less predictable. Instead of stable seasonal patterns, the state is experiencing stronger swings between wet and dry conditions, making rainfall patterns harder to anticipate and manage.
+      </p>
+      <p class="source-note">
+      Sources: Kunkel et al. (2013), pp. 11-14; Risser et al. (2023), pp. 706.
+      </p>
+    </section>
+
+    <section>
+      <h2>Why predictability matters</h2>
+
+      <p>
+        One of the most important consequences of increasing rainfall variability is the loss of predictability. Water systems, agriculture, and infrastructure are all designed around expected patterns of rainfall. When those patterns become less reliable, planning becomes far more difficult.
+      </p>
+
+      <p>
+        Farmers rely on seasonal rainfall patterns to support planting and harvest cycles. Cities depend on predictable rainfall to manage reservoirs, drainage systems, and long-term water supply. When precipitation becomes more erratic, both excess water and shortages become more difficult to prepare for.
+      </p>
+
+      <p>
+        That means the problem is not only how much rain falls, but when and how it falls. Increased variability changes the timing and distribution of rainfall, creating new challenges even when annual totals appear familiar.
+      </p>
+      <p class="source-note">
+      Sources: Risser et al. (2023); Kunkel et al. (2013).
+      </p>
+    </section>
+
+    <section id="why">
+      <h2>Why this matters in Texas</h2>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Flooding</h3>
+          <p>
+            Heavier rainfall events increase the risk of flash flooding, road damage, overwhelmed drainage systems, and costly disruption to communities.
+          </p>
         </div>
-      </figure>
-    </div>
 
-    <p>
-      The data shows that precipitation in Texas fluctuates significantly from year to year. Some years experience much higher rainfall than average, while others are much drier. There is no consistent upward or downward trend. Instead, the pattern is irregular and highly variable.
-    </p>
+        <div class="card">
+          <h3>Water Management</h3>
+          <p>
+            Unpredictable rainfall makes it harder to manage reservoirs and long-term water supplies, especially when wet years and dry years arrive in sharp succession.
+          </p>
+        </div>
 
-    <p>
-      This variability is the key takeaway. Rather than a steady change, Texas is experiencing more unpredictable rainfall patterns, which makes planning and resource management more difficult.
-    </p>
-  </section>
+        <div class="card">
+          <h3>Infrastructure</h3>
+          <p>
+            Stormwater systems, culverts, and other built infrastructure are strained when rainfall arrives in more intense bursts than they were designed to handle.
+          </p>
+        </div>
 
-  <section id="extremes">
-    <h2>Increasing Extremes</h2>
-
-    <div class="quote">
-      <strong>Risser et al. (2023)</strong>
-      Precipitation has “large internal variability,” making trends difficult to detect while extreme events become more important.
-    </div>
-
-    <p>
-      Scientific research supports what the data shows. According to Risser et al., precipitation patterns naturally contain a high level of variability, but climate change is increasing the importance of extreme events. This means that even if average rainfall does not change dramatically, the intensity and frequency of extreme rainfall events can still increase.
-    </p>
-
-    <div class="quote">
-      <strong>Kunkel et al. (2013)</strong>
-      The region experiences highly variable precipitation, including periods of both severe drought and heavy rainfall.
-    </div>
-
-    <p>
-      In Texas and the broader Great Plains, this variability is already a defining characteristic of the climate. Climate change is amplifying these extremes, making both flooding and drought more likely.
-    </p>
-  </section>
-
-  <section id="why">
-    <h2>Why This Matters</h2>
-
-    <div class="cards">
-      <div class="card">
-        <h3>Flooding</h3>
-        <p>Heavier rainfall events increase the risk of flash flooding and infrastructure damage.</p>
+        <div class="card">
+          <h3>Agriculture</h3>
+          <p>
+            Farmers must cope with both drought conditions and sudden heavy rainfall, which can stress crops, erode soils, and disrupt planting schedules.
+          </p>
+        </div>
       </div>
 
-      <div class="card">
-        <h3>Water Management</h3>
-        <p>Unpredictable rainfall makes it harder to manage reservoirs and water supply.</p>
-      </div>
+      <p style="margin-top: 1.25rem;">
+        These impacts reflect the growing instability in Texas’s climate system. When rainfall becomes less predictable, both too much water and too little water create serious challenges for communities, ecosystems, and infrastructure.
+      </p>
 
-      <div class="card">
-        <h3>Infrastructure</h3>
-        <p>Stormwater systems and drainage infrastructure are strained by extreme rainfall events.</p>
-      </div>
+      <p class="source-note">
+        Sources: Risser et al. (2023); Kunkel et al. (2013).
+      </p>
+    </section>
 
-      <div class="card">
-        <h3>Agriculture</h3>
-        <p>Farmers must deal with both drought conditions and sudden heavy rainfall.</p>
-      </div>
-    </div>
-
-    <p class="source-note">
-      Source: NOAA National Centers for Environmental Information, PRISM Climate Group, Risser et al. (2023), and Kunkel et al. (2013).
-    </p>
-  </section>
-
-  <section>
-    <div class="concept-box">
-      Key Concept: Climate change does not simply increase or decrease rainfall. It increases variability, leading to more extreme swings between wet and dry conditions.
-    </div>
-  </section>
-
-  <section>
-    <h2>Sources</h2>
-    <ul>
-      <li><a href="#">NOAA National Centers for Environmental Information</a></li>
-      <li><a href="#">PRISM Climate Group</a></li>
-      <li><a href="#">Risser et al. (2023)</a></li>
-      <li><a href="#">Kunkel et al. (2013)</a></li>
-    </ul>
-  </section>
-
-  <section class="transition">
-    <h2>Next: Drought in Texas</h2>
-    <p>
-      These increasingly unpredictable rainfall patterns contribute directly to more severe drought conditions across Texas.
-    </p>
-  </section>
+    <section class="transition">
+      <h2>Next: Drought in Texas</h2>
+      <p>
+        As rainfall becomes more variable and less predictable, Texas is experiencing more severe water stress. Rising temperatures and shifting precipitation patterns together increase the risk of drought across the state.
+      </p>
+      <a class="button-link" href="drought.html">Go to the Next Page</a>
+    </section>
 
   </main>
 
@@ -662,7 +813,29 @@
     </div>
   </footer>
 
-  <script src="nav.js" defer></script>
+  <script>
+    const nav = document.querySelector(".top-nav");
+    const toggle = document.querySelector(".nav-toggle");
+
+    function updateNavLayout() {
+      if (window.innerWidth <= 760) {
+        nav.classList.add("is-collapsed");
+      } else {
+        nav.classList.remove("is-collapsed", "is-open");
+        if (toggle) toggle.setAttribute("aria-expanded", "false");
+      }
+    }
+
+    if (toggle) {
+      toggle.addEventListener("click", () => {
+        const isOpen = nav.classList.toggle("is-open");
+        toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+    }
+
+    window.addEventListener("resize", updateNavLayout);
+    updateNavLayout();
+  </script>
 
 </body>
 </html>
