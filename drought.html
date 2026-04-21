@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rising Temperatures | Climate Change in Texas</title>
+  <title>Drought | Climate Change in Texas</title>
   <style>
     :root {
       --bg: #f6f7f4;
@@ -170,8 +170,8 @@
 
     .site-header {
       position: relative;
-      background: linear-gradient(rgba(14, 35, 51, 0.72), rgba(14, 35, 51, 0.72)),
-        url("images/Rising temps background.jpeg") center/cover;
+      background: linear-gradient(rgba(14, 35, 51, 0.7), rgba(14, 35, 51, 0.7)),
+        url("images/Drought Image.webp") center/cover;
       color: white;
       padding: 5rem 1.5rem 4rem;
     }
@@ -210,6 +210,7 @@
       margin: 0;
       font-size: 0.72rem;
       color: rgba(255, 255, 255, 0.9);
+      font-family: inherit;
     }
 
     .header-credit a {
@@ -266,12 +267,6 @@
       color: var(--accent-dark);
     }
 
-    h3 {
-      margin: 0 0 0.6rem;
-      color: var(--accent-dark);
-      font-size: 1.08rem;
-    }
-
     p {
       margin: 0 0 1rem;
       font-size: 1.06rem;
@@ -302,38 +297,9 @@
       background: #fafbfc;
     }
 
-    figure {
-      margin: 0;
-      padding: 1rem;
-    }
-
-    figcaption {
-      font-size: 0.95rem;
-      color: var(--muted);
-      margin-top: 0.75rem;
-    }
-
-    .placeholder-box {
-      min-height: 420px;
-      border: 2px dashed #aac2d6;
-      border-radius: 12px;
-      background: linear-gradient(180deg, #f8fbfd 0%, #f2f7fa 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2rem;
-      color: var(--muted);
-      font-size: 1rem;
-    }
-
-    .placeholder-box.small {
-      min-height: 320px;
-    }
-
     .visual-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 1rem;
       margin-top: 1rem;
     }
@@ -352,22 +318,28 @@
       padding: 1.1rem;
     }
 
+    .info-card h3 {
+      margin-top: 0;
+      margin-bottom: 0.6rem;
+      color: var(--accent-dark);
+      font-size: 1.05rem;
+    }
+
     .info-card p {
       margin: 0;
       color: var(--muted);
       font-size: 0.98rem;
     }
 
-    .source-links {
-      list-style: none;
-      padding: 0;
-      margin: 1rem 0 0;
-      display: grid;
-      gap: 0.75rem;
+    figure {
+      margin: 0;
+      padding: 1rem;
     }
 
-    .source-links a {
-      text-decoration: none;
+    figcaption {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-top: 0.75rem;
     }
 
     .transition {
@@ -517,10 +489,6 @@
       .intro-card {
         padding: 1.35rem;
       }
-
-      .placeholder-box {
-        min-height: 280px;
-      }
     }
   </style>
 </head>
@@ -535,7 +503,7 @@
           <li><a href="why-texas.html">Why Texas?</a></li>
           <li><a href="rising-temperatures.html">Rising Temperatures</a></li>
           <li><a href="changing-rainfall.html">Changing Rainfall</a></li>
-          <li><a href="drought.html">Water Stress</a></li>
+          <li><a href="drought.html" aria-current="page">Water Stress</a></li>
         </ul>
       </div>
     </div>
@@ -544,12 +512,13 @@
   <header class="site-header">
     <div class="header-inner">
       <div class="eyebrow">Climate Change in Texas</div>
-      <h1>Rising Temperatures</h1>
+      <h1>Water Stress in Texas</h1>
       <p class="subtitle">
-        Texas has warmed over the past several decades, and that warming is making extreme heat a more serious part of the state’s climate.
+        Drought in Texas is becoming more severe as rising temperatures and changing precipitation patterns intensify water loss and place growing pressure on communities, agriculture, and ecosystems.
       </p>
+       </p>
       <p class="header-credit">
-        Source: <a href="https://www.facebook.com/FtBendCountyFMO/photos/-texas-heat-safety-reminder-from-the-fire-marshal-as-temperatures-continue-to-so/1178875170942610/" target="_blank" rel="noopener noreferrer">Facebook</a>
+        Source: <a href="https://www.nbcnews.com/id/wbna44725170" target="_blank" rel="noopener noreferrer">NBC News</a>
       </p>
     </div>
   </header>
@@ -557,165 +526,178 @@
   <main>
     <div class="intro-card">
       <p>
-        Climate change in Texas is visible in the temperature record. Long-term data shows that average annual temperatures have risen over time, and scientific studies explain why this warming matters for heatwaves, health, energy demand, wildfire conditions, and agriculture.
+        Drought has always been part of Texas climate, but climate change is making it more severe and more difficult to manage. Rising temperatures increase evaporation, changing rainfall patterns lengthen dry periods, and declining soil moisture intensifies water stress across the state.
       </p>
       <ul class="page-nav">
-        <li><a href="#warming-trend">The Warming Trend</a></li>
-        <li><a href="#reading-data">Reading the Data</a></li>
-        <li><a href="#extreme-heat">From Warming to Heatwaves</a></li>
-        <li><a href="#why-matters">Why It Matters</a></li>
+        <li><a href="#claim">Main Claim</a></li>
+        <li><a href="#visuals">Drought Over Time</a></li>
+        <li><a href="#process">Why Drought Is Getting Worse</a></li>
+        <li><a href="#impact">Why It Matters</a></li>
       </ul>
     </div>
 
-    <section id="warming-trend">
-      <h2>Texas has warmed over time</h2>
-      <p>
-        The most direct evidence on this page comes from NOAA's nClimDiv dataset. By averaging the temperature data into one statewide annual value for each year, it becomes easier to see how Texas' temperatures have changed over time.
-      </p>
-
-      <div class="visual">
-        <figure>
-    
-            <img src="images/Annual Temperature Data 1970-2020 (nClimDiv).png" alt="Placeholder for Texas average annual temperature graph" />
-          
-          <figcaption>
-            Texas average annual temperature based on NOAA nClimDiv data.
-          </figcaption>
-        </figure>
-      </div>
-
-      <p>
-        Even with year to year fluctuations, the long-term direction of the graph is upward. More recent years are generally warmer than earlier ones, which is exactly the kind of pattern expected in a warming climate.
-      </p>
-
+    <section id="claim">
+      <h2>The drought threat is becoming more severe</h2>
       <div class="quote">
-        <strong>Nielsen-Gammon (2024)</strong>
-        “Since 1950, the trend has been 0.29 °F per decade, and since 1975, 0.62 °F per decade. Recent temperatures have increased in all seasons and in all regions of Texas.”
+        <strong>Nielsen-Gammon et al. (2020)</strong>
+        “Climate projections for the 21st century portray ‘unprecedented’ drought risk for the U.S. Southwest and Great Plains.”
       </div>
 
       <p>
-        This quote is important because it confirms that the warming shown in the graph is not limited to a single region or season. It is a statewide trend.
+        Texas sits directly within this area of elevated drought risk. Nielsen-Gammon et al. explain that climate models robustly project drying of summer-season soil moisture across both eastern and western Texas during the 21st century. They also warn that future conditions may become drier than even the most arid centuries of the last 1,000 years.
       </p>
+
+      <p>
+        This matters because drought in Texas is no longer only a question of below-normal rainfall. It is increasingly shaped by a warmer atmosphere, greater evaporation, and longer-lasting moisture deficits that make dry conditions harder to reverse.
+      </p>
+
       <p class="source-note">
-        Sources: Nielsen-Gammon (2024), pp. 3; NOAA National Centers for Environmental Information (NCEI) (2026).
+        Source: Nielsen-Gammon et al. (2020), pp. 1, 5-6; NOAA National Centers for Environmental Information, Climate at a Glance: Statewide Time Series.
       </p>
     </section>
 
-    <section id="reading-data">
-      <h2>How to read the trend</h2>
-      <p>
-        A climate graph does not need to rise every single year to show warming. What matters is the larger pattern across many decades. In Texas, annual temperatures still vary from year to year, but the later part of the record is clearly warmer than the earlier part.
-      </p>
-
-      <p>
-        That means the graph is showing more than isolated hot years. It is showing a long-term shift in baseline climate conditions. When average temperatures rise, extreme heat becomes easier to reach and sustain.
-      </p>
+    <section id="visuals">
+      <h2>Drought over time</h2>
 
       <div class="visual">
-        <figure>
-          <img src ="images/nClimDiv temp:10 year rolling avg.png" alt="Placeholder for Texas average annual temperature graph" />
-          
-          
-          <figcaption>
-            10 year rolling-average line of Texas annual average temperature, displaying the warming pattern in Texas.
-          </figcaption>
-        </figure>
-      </div>
-
-      <div class="quote">
-        <strong>Nielsen-Gammon (2024)</strong>
-        “If recent trends continue, as expected, a middle-of-the-road estimate of the overall rate of temperature increase in Texas would be about 0.6 °F per decade.”
+        <div class="visual-grid">
+          <figure>
+            <img src="images/Palmer Drought Index.png" alt="Texas Palmer Drought Severity Index graph">
+            <figcaption>
+              Palmer Drought Severity Index (PDSI) for Texas, 1970–2020. Negative values indicate drought conditions, while positive values indicate wetter-than-normal conditions. The graph highlights periods of severe drought, including the extreme 2011 event.
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="images/Drought timeline visual.png" alt="Timeline of major drought events in Texas">
+            <figcaption>
+              Timeline of major drought events in Texas from 1970 to 2020, highlighting notable periods of severe drought, including the extreme 2011 event.
+            </figcaption>
+          </figure>
+        </div>
       </div>
 
       <p>
-        Nielsen-Gammon's projection makes the trend more concrete: if the recent rate continues, a typical Texas year in the near future will be warmer than almost all years in the historical record.
-      </p>
-      <p class="source-note">
-        Sources: Nielsen-Gammon (2024), pp. 3; NOAA National Centers for Environmental Information (NCEI) (2026).
-      </p>
-    </section>
-
-    <section id="extreme-heat">
-      <h2>Rising averages lead to more extreme heat</h2>
-      <p>
-        Average warming matters because it changes the conditions that produce heatwaves. When the baseline climate gets hotter, dangerous heat becomes more common and lasts longer.
+        These visuals help show that drought is a recurring feature of Texas climate, but recent droughts have occurred in a context of rising temperatures and increasing pressure on water resources. The result is a more serious form of water stress, where dry conditions can intensify quickly and produce broader consequences.
       </p>
 
       <div class="quote">
-        <strong>Perkins-Kirkpatrick &amp; Gibson (2017)</strong>
-        “As anthropogenic influence on the global climate intensifies, future increases in heatwaves
-are unavoidable.”
+        <strong>Nielsen-Gammon et al. (2020)</strong>
+        “The worst single year of drought across the state occurred in 2011.”
       </div>
 
       <p>
-        Rising average temperatures are not just increasing overall warmth; they are making extreme heat more frequent and more persistent. As shown in the graph “Average Annual Number of 100°F Days,” hotter baseline conditions mean that Texas is experiencing more days of extreme heat than in the past. This aligns with broader climate research, which finds that “future increases in heatwaves are unavoidable” as human influence on the climate grows. Together, the data and research show that warming is not just gradual. It is actively increasing the frequency and severity of extreme heat across Texas.
+        The 2011 drought is especially important because it illustrates how extreme drought can affect the entire state at once, not only environmentally but economically and socially as well. :contentReference[oaicite:3]{index=3}
       </p>
 
-      <div class="visual">
-        <figure>
-          <img src ="images/100ºF Days Graph.png" alt="Graph for Average Annual Number of 100-Degree Days in Texas" />
-          <figcaption>
-            Texas heatwave days from 1974 to 2023. Adapted from Nielsen-Gammon (2024, p. 6) and Perkins-Kirkpatrick & Gibson (2017, p. 5), with values approximated from the original figure.
-          </figcaption>
-        </figure>
-      </div>
       <p class="source-note">
-        Sources: Nielsen-Gammon (2024), pp. 6; Perkins-Kirkpatrick & Gibson (2017), Changes in Regional Heatwave Characteristics, pp. 5.
+        Source: NOAA National Centers for Environmental Information; Nielsen-Gammon et al. (2020), p. 7.
       </p>
     </section>
 
-    <section id="why-matters">
-      <h2>Why this matters in Texas</h2>
+    <section id="process">
+      <h2>Why drought is getting worse</h2>
+
       <p>
-        Rising temperatures affect more than climate statistics. In Texas, they shape public health risks, energy use, wildfire conditions, and agricultural stress.
+        Drought in Texas is becoming more severe because several climate factors are working together. Less available soil moisture, higher evaporation, and longer dry periods all contribute to stronger and more persistent water stress.
       </p>
 
       <div class="cards-grid">
         <div class="info-card">
-          <h3>Health</h3>
+          <h3>Less soil moisture</h3>
           <p>
-            Hotter conditions increase the risk of heat exhaustion, dehydration, and heat-related illness, especially during extended summer heat events.
+            Climate models consistently project drying of summer-season soil moisture in Texas. This reduces the amount of water available to crops, vegetation, and surface systems.
           </p>
         </div>
 
         <div class="info-card">
-          <h3>Energy Demand</h3>
+          <h3>Higher evaporation</h3>
           <p>
-            Higher temperatures increase air-conditioning use and place additional strain on the electric grid during peak summer demand.
+            As temperatures rise, water leaves the land more quickly. Even when rain falls, more moisture is lost back to the atmosphere through evaporation and plant water use.
           </p>
         </div>
 
         <div class="info-card">
-          <h3>Wildfire Conditions</h3>
+          <h3>Longer dry periods</h3>
           <p>
-            Rising heat can dry vegetation and increase evaporation, creating conditions that are more favorable for wildfire in several parts of Texas.
+            Changing precipitation patterns increase the time between useful rainfall events, making it easier for drought conditions to develop and persist.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>More extreme variability</h3>
+          <p>
+            Swain and Hayhoe project that climate variability itself may increase, meaning more extreme dry and wet seasons under greater warming.
+          </p>
+        </div>
+      </div>
+
+      <div class="quote">
+        <strong>Nielsen-Gammon et al. (2020)</strong>
+        “Higher temperatures lead to greater evaporation rates.”
+      </div>
+
+      <p>
+        Nielsen-Gammon et al. also explain that future drying in Texas occurs from the combined influence of declining precipitation and increased evaporative demand from a warmer atmosphere. Swain and Hayhoe similarly conclude that climate variability is projected to increase, indicating more extreme conditions under continued warming. Together, these findings show that drought is being intensified by both temperature and rainfall changes. 
+      </p>
+
+      <p class="source-note">
+        Sources: Nielsen-Gammon et al. (2020), pp. 3, 5-6; Swain & Hayhoe (2015), p. 1.
+      </p>
+    </section>
+
+    <section id="impact">
+      <h2>Why this matters in Texas</h2>
+
+      <div class="cards-grid">
+        <div class="info-card">
+          <h3>Water supply</h3>
+          <p>
+            Drought lowers reservoir storage, reduces streamflow, and strains groundwater supplies, making it harder to meet the needs of a growing population.
           </p>
         </div>
 
         <div class="info-card">
           <h3>Agriculture</h3>
           <p>
-            Heat stress affects crops, livestock, and soil moisture, making agricultural production and water management more difficult.
+            Crops and livestock are highly vulnerable to prolonged heat and moisture deficits, which can reduce yields and raise production costs.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>Wildfires</h3>
+          <p>
+            Dry soils, stressed vegetation, and prolonged heat create conditions that make wildfire more likely and more destructive.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>Economic impact</h3>
+          <p>
+            Severe drought produces major financial losses for agriculture, local communities, and water systems across the state.
           </p>
         </div>
       </div>
 
-      <p style="margin-top: 1.25rem;">
-        In other words, rising temperatures are not just a scientific abstraction. They affect how Texans live, work, and prepare for the future.
+      <div class="quote">
+        <strong>Nielsen-Gammon et al. (2020)</strong>
+        “This event left the state with 7.6 billion dollars in agricultural and livestock losses, 301 million dead trees ... and many dried-up lakes and rivers.”
+      </div>
+
+      <p>
+        This quote refers to the 2011 drought and shows how severe drought affects far more than weather statistics. It affects food production, ecosystems, local economies, and the long-term resilience of Texas water resources. :contentReference[oaicite:5]{index=5}
       </p>
+
       <p class="source-note">
-        Sources: Nielsen-Gammon (2024); Perkins-Kirkpatrick & Gibson (2017).
+        Sources: Nielsen-Gammon et al. (2020), p. 7; Swain & Hayhoe (2015).
       </p>
     </section>
 
-  
-
     <section class="transition">
-      <h2>Next: Changing Rainfall Patterns</h2>
+      <h2>Next: Looking Ahead</h2>
       <p>
-        Temperature is only one part of the climate story. The next page examines how climate change is affecting precipitation and rainfall variability in Texas.
+        Drought brings together the major climate patterns already shown across this project: rising temperatures, changing rainfall, and growing extremes. The next step is to consider what these trends mean for Texas in the future.
       </p>
-      <a class="button-link" href="changing-rainfall.html">Go to the Next Page</a>
+      <a class="button-link" href="index.html">Return to Home</a>
     </section>
   </main>
 
